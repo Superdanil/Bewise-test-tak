@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  data_base:
+    image: postgres:14.2
+    container_name: bewise_db_container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: bewise_db
+    volumes:
+      - bewise_db_volume:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  bewise_db_volume:
